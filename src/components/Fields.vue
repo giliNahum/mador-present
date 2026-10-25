@@ -1,0 +1,100 @@
+<template>
+  <div id="fields">
+    <div
+      v-for="(btn, index) in fieldData"
+      :key="index"
+      :id="btn.id"
+      class="field-btn"
+    >
+      <p class="field-text" :id="btn.id">{{ btn.title }}</p>
+      <img :src="btn.src" :alt="btn.id" class="field-img" :id="btn.id" />
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "fields",
+  components: {},
+  data() {
+    return {
+      fieldData: [
+        { id: "mop", title: "לומדות", src: "./assets/general/mop.svg" },
+        {
+          id: "graphics",
+          title: "גרפיקה",
+          src: "./assets/general/graphics.svg",
+        },
+        { id: "images", title: "צילום", src: "./assets/general/images.svg" },
+        {
+          id: "videos",
+          title: "וידאו",
+          src: "./assets/general/videos.svg",
+        },
+        {
+          id: "campus",
+          title: "קמפוס",
+          src: "./assets/general/idflogo.png",
+        },
+        { id: "social", title: "סושיאל", src: "./assets/general/social.svg" }
+      ],
+    };
+  },
+  methods: {},
+};
+</script>
+
+<style scoped>
+#fields {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 4rem 6rem;
+  justify-items: center;
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.field-btn {
+  display: flex;
+  text-align: center;
+  background-color: #B3D8F3;
+  border-radius: 20px;
+  justify-content: center;
+  width: 14rem;
+  height: 14rem;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  border: 5px solid #EDFAFF;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.field-btn:hover {
+  background-color: #EDFAFF;
+  border: 5px solid #B3D8F3;
+}
+
+.field-btn:active {
+  background-color: #82b6d8;
+}
+
+.field-img {
+  height: 7.5rem;
+}
+
+.field-text {
+  margin: 0rem;
+  font-size: 2.5rem;
+}
+
+/* .field-btn:nth-child(n + 4) {
+  transform: translateX(-10rem); 
+} */
+
+@media (max-width: 1400px) {
+  #fields  {
+    gap: 3rem 2rem;
+  }
+}
+</style>
