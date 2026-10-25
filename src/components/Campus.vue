@@ -1,7 +1,7 @@
 <template>
     <div id="campus">
       <video
-        src="/assets/campus/campus.mp4"
+        src=""
         class="video"
         controls
         autoplay
