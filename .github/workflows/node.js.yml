@@ -4,7 +4,7 @@ name: Deploying Vue app
 on:
   # Runs on pushes targeting the default branch (master)
   push:
-    branches: ["master", "main"]
+    branches: ["private"]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -27,12 +27,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Commit changes
-        uses: EndBug/add-and-commit@v9
-        with:
-          author_name: GitHub Actions
-          author_email: actions@github.com
-          message: Update vite.config value
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Use Node.js 20.x
